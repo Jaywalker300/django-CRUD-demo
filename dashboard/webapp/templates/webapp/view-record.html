@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+{% extends 'webapp/base.html' %}
+
+{% block content %}
+ 
+  <div class="card">
+  
+
+    <div class="card-body">
+
+      <i class="fa fa-user-circle-o" aria-hidden="true"></i> &nbsp;
+      
+        
+    <strong>
+      &nbsp;   &nbsp;
+
+      {{record.last_name|upper}},
+
+      {{record.first_name}}
+      <hr>
+  </strong>
+
+  <br>
+
+        <p><strong> ID: </strong> {{record.id}} </p>
+
+        <p><strong> Email: </strong> {{record.email}} </p>
+
+        <p><strong> Phone number: </strong> {{record.phone}} </p>
+
+        <p><strong> Address :</strong> {{record.address}} </p>
+
+        <p><strong> City: </strong> {{record.City}} </p>
+
+        <p><strong> Country: </strong> {{record.country}} </p>
+
+        <p><strong> Created at: </strong> {{record.creation_date}} </p>
+    </div>
+  </div>
+
+  <br>
+
+  <a href="{% url 'profile-dashboard' %}"  class="btn btn-secondary"> Back </a>
+
+  &nbsp;
+
+  <a href="{% url 'update-record' record.id %}"  class="btn btn-info"> Update Record </a>
+
+  &nbsp;
+
+  <a href="{% url 'delete-record' record.id %}"  class="btn btn-danger"> Delete</a>
+
+
+
+{% endblock %}
